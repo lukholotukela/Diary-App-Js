@@ -1,1 +1,1 @@
-# Diary App JavaScipt
+# Diary-App-JavaScript
