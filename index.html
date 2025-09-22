@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>Diary App</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Diary App</h1>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="diary-input">
+          <h2>Upload your entry</h2>
+          <input type="file" id="file-input" accept=".txt" />
+        </div>
+        <div class="save-entry inactive">
+          <div class="open-modal-box" id="open-modal-box">
+            <button id="open-modal">
+              <img
+                id="open-modal"
+                src="/images/save-icon.png"
+                alt="save-button"
+                width="50"
+                height="50"
+              />
+            </button>
+            <p>Save your entry</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal inactive" id="modal">
+        <h2>Name your entry</h2>
+        <button id="close-modal" class="close-modal">&times</button>
+        <input type="text" id="entry-name" placeholder="Entry Name" />
+        <button id="save-button">Save</button>
+        <div class="saved-entries"></div>
+      </div>
+      <div class="overlay inactive" id="overlay"></div>
+
+      <div class="saved-entries-display" id="saved-entries-display">
+        <h2>Saved Entries</h2>
+      </div>
+
+      <div class="entry-display" id="entry-display"></div>
+    </main>
+
+    <script src="/scripts/app.js"></script>
+  </body>
+</html>

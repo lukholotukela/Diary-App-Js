@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/* Variables */
+:root {
+  --primary-color: #284b63;
+  --secondary-color: white;
+  --background-color: #f2f2f2;
+  --darker-bg-color: #cecece;
+  --text-color: #1b1b1b;
+  --hover-color: #6f8696;
+  --sticky-color: #aec6d6;
+  --font-family: "Roboto", sans-serif;
+  --entry-font-family: cursive;
+}
+
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.diary-input {
+  margin-bottom: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+#entry-display {
+  position: relative;
+  margin-top: 20px;
+  max-width: 700px;
+  margin-inline: auto;
+  white-space: pre-wrap;
+  font-family: var(--entry-font-family);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-image: url(../images/paper-texture2.avif);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+input[type="file"] {
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: var(--darker-bg-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  background-color: var(--hover-color);
+}
+
+.entry-display input[type="text"] {
+  position: absolute;
+  translate: 0 -142%;
+  border-radius: 5px;
+  padding: 0;
+  font-family: var(--entry-font-family);
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  width: 90%;
+  color: var(--text-color);
+  background: url(../images/paper-texture2.avif);
+  cursor: pointer;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.goals {
+  position: absolute;
+  background-color: var(--sticky-color);
+  right: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  width: clamp(250px, 50%, 300px);
+  box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.goals input[type="text"] {
+  background: var(--sticky-color);
+  width: 200px;
+  position: absolute;
+}
+
+.open-modal-box {
+  margin-top: 15px;
+  gap: 10px;
+  display: flex;
+  background-color: var(--darker-bg-color);
+  padding: 10px;
+  width: 210px;
+  border-radius: 5px;
+}
+
+.open-modal-box:hover {
+  background-color: var(--hover-color);
+}
+
+#open-modal {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+#open-modal img {
+  width: 50px;
+  height: 50px;
+}
+
+ol li {
+  list-style: circle;
+}
+
+.inactive {
+  display: none;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: all;
+  z-index: 9;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.entry-blocks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--darker-bg-color);
+  max-width: 300px;
+  margin: 8px 0;
+  font-size: large;
+  border: 1px solid var(--darker-bg-color);
+  height: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.entry-blocks:hover {
+  background-color: var(--hover-color);
+}
+
+.delete-blocks {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 288px;
+  color: var(--background-color);
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 3px;
+  border-radius: 5px;
+  translate: 0 -39px;
+  background-color: var(--primary-color);
+  z-index: 2;
+}
+
+.delete-blocks:hover {
+  color: var(--text-color);
+  background-color: var(--hover-color);
+}
+
+.entry-blocks:active {
+  background-color: var(--darker-bg-color);
+}
+
+.delete-blocks:active {
+  background-color: var(--hover-color);
+}
+
+.entry-blocks p {
+  cursor: default;
+  padding: 5px;
+}
+
+/* RESPONIVE DESIGN */
+
+/* MOBILE */
+/* 
+@media (max-width: 768px) {
+  #entry-display {
+    width: 100%;
+    margin-right: 20px;
+    font-size: 18px;
+  }
+    
+  .hero {
+    flex-direction: column;
+  }
+
+  .diary-input {
+    width: 35%;
+  }
+
+  header {
+    text-align: left;
+  }
+} */
